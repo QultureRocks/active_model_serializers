@@ -196,6 +196,7 @@ module ActiveModel
       # @api private
       def build_association(parent_serializer, parent_serializer_options, include_slice = {})
         association_options = {
+          parent: parent_serializer.object,
           parent_serializer: parent_serializer,
           parent_serializer_options: parent_serializer_options,
           include_slice: include_slice

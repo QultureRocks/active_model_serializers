@@ -311,7 +311,7 @@ module ActiveModel
 
     # END SERIALIZER MACROS
 
-    attr_accessor :object, :root, :scope
+    attr_accessor :object, :root, :scope, :ancestors
 
     # `scope_name` is set as :current_user by default in the controller.
     # If the instance does not have a method named `scope_name`, it
@@ -321,6 +321,7 @@ module ActiveModel
       self.instance_options = options
       self.root = instance_options[:root]
       self.scope = instance_options[:scope]
+      self.ancestors = instance_options[:ancestors]
 
       return if !(scope_name = instance_options[:scope_name]) || respond_to?(scope_name)
 

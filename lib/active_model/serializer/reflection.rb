@@ -201,13 +201,19 @@ module ActiveModel
           parent_serializer_options: parent_serializer_options,
           include_slice: include_slice
         }
+
+        self.ancestors = [
+          parent_serializer.object,
+          parent_serializer&.send(:instance_options)&.fetch(:ancestors, nil)&.first
+        ].compact
+
         Association.new(self, association_options)
       end
 
       protected
 
       # used in instance exec
-      attr_accessor :object, :scope
+      attr_accessor :object, :scope, :ancestors
     end
   end
 end

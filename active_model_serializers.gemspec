@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.1'
 
-  rails_versions = ['>= 4.1', '< 6.1']
+  rails_versions = ['>= 4.1', '< 6.2']
   spec.add_runtime_dependency 'activemodel', rails_versions
   # 'activesupport', rails_versions
   # 'builder'
@@ -54,10 +54,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'kaminari', ' ~> 0.16.3'
   spec.add_development_dependency 'will_paginate', '~> 3.0', '>= 3.0.7'
 
-  spec.add_development_dependency 'bundler', '~> 1.6'
-  spec.add_development_dependency 'simplecov', '~> 0.11'
+  spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'timecop', '~> 0.7'
-  spec.add_development_dependency 'grape', ['>= 0.13', '< 0.19.1']
+  spec.add_development_dependency 'grape', '>= 0.13'
   spec.add_development_dependency 'json_schema'
-  spec.add_development_dependency 'rake', ['>= 10.0', '< 13.0']
+  spec.add_development_dependency 'rake', '>= 10.0'
 end
